@@ -58,12 +58,12 @@ body{background:#fff}main{padding:0;max-width:none}
 *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 </style></head><body>
-<header><div class="logo">Meu Site</div><button id="mb" aria-label="Menu" onclick="document.body.classList.toggle('mn')">&#9776;</button><nav id="nav"></nav></header>
+<header><div class="logo">DamageCost</div><button id="mb" aria-label="Menu" onclick="document.body.classList.toggle('mn')">&#9776;</button><nav id="nav"></nav></header>
 <main id="app">Carregando...</main>
-<footer>&copy; 2026 Meu Site. Todos os direitos reservados. · v19 (Supabase)</footer>
+<footer>&copy; 2026 DamageCost. Todos os direitos reservados. · v19 (Supabase)</footer>
 <script>
 // Supabase: Project Settings > API (URL do projeto e chave anon/public)
-const SB_URL='COLE_AQUI_A_URL_DO_PROJETO',SB_KEY='COLE_AQUI_A_CHAVE_ANON';
+const SB_URL='https://xobbhccaegeujxrvfvxr.supabase.co/rest/v1/',SB_KEY='sb_publishable_Mw6bDwfUFkwfHkLXPIPCOA_fQxvqfjY';
 const SET=['Operação','Manutenção','Suprimentos','Líder','Administração'];
 const PG={orc:['orcamentos','Orçamentos'],novo:['novo','Novo Orçamento'],sup:['suprimentos','Suprimentos'],mat:['materiais','Materiais & Horas'],usu:['usuarios','Usuários'],fro:['frota','Frota']};
 let U=null;try{U=JSON.parse(localStorage.getItem('u'))}catch(e){}
@@ -182,7 +182,7 @@ V.ver=async (id,ex)=>{if(!id){location.hash='#orc';return ''}const [r,hist]=awai
  const aDef=x=>x.categoria==='Hora'&&x.minutos>0&&!o.maoObra;
  if(ex==='print'&&canPrint)setTimeout(()=>{history.replaceState(null,'','#ver/'+id);window.print()},500);
  const b=r.itens.map(x=>{const ad=aDef(x),s=x.cotado&&!ad?x.qtd*x.unitario:0;t+=s;return `<tr><td>${esc(x.descricao)}</td><td>${catB(x.categoria)}</td><td>${x.qtd}</td><td>${ad?'<span class="m">a definir</span>':x.cotado?brl(x.unitario):'<span class="m">aguardando cotação</span>'}</td><td>${x.cotado&&!ad?brl(s):'-'}</td></tr>`}).join('')||'<tr><td colspan="5" class="m">Orçamento ainda não dimensionado.</td></tr>';
- return `<div class="onlyprint" style="text-align:center;margin-bottom:.8rem"><b style="font-size:1.2rem">Meu Site</b><br>Orçamento de manutenção · emitido em ${new Date().toLocaleString('pt-BR')}</div>
+ return `<div class="onlyprint" style="text-align:center;margin-bottom:.8rem"><b style="font-size:1.2rem">DamageCost</b><br>Orçamento de manutenção · emitido em ${new Date().toLocaleString('pt-BR')}</div>
 <div class="ph"><h1>Orçamento #${esc(o.id)} ${bd(o.status)}</h1><a class="noprint" href="#orc">&larr; Voltar para a lista</a></div>
 <div class="card"><div class="grid"><div><span class="m">Veículo</span><br><b>${esc(o.veiculo)}</b></div><div><span class="m">Filial</span><br><b>${esc(o.filial)}</b></div><div><span class="m">Tipo de serviço</span><br><b>${esc(o.tipoServico)}</b></div><div><span class="m">Solicitante</span><br><b>${esc(o.solicitante)}</b></div>${hh.length?`<div><span class="m">Mão de obra</span><br><b>${o.maoObra||'A definir'}</b></div>`:''}</div>
 <label>Descrição da avaria</label><div>${esc(o.descricao)}</div></div>
