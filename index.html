@@ -50,12 +50,12 @@ td input,td select{max-width:55%;text-align:right}
 .lg{margin:5vh auto}
 }
 </style></head><body>
-<header><div class="logo">Meu Site</div><button id="mb" aria-label="Menu" onclick="document.body.classList.toggle('mn')">&#9776;</button><nav id="nav"></nav></header>
+<header><div class="logo">DamageCost</div><button id="mb" aria-label="Menu" onclick="document.body.classList.toggle('mn')">&#9776;</button><nav id="nav"></nav></header>
 <main id="app">Carregando...</main>
-<footer>&copy; 2026 Meu Site. Todos os direitos reservados. · v12 (Supabase)</footer>
+<footer>&copy; 2026 DamageCost. Todos os direitos reservados. · v12 (Supabase)</footer>
 <script>
 // Supabase: Project Settings > API (URL do projeto e chave anon/public)
-const SB_URL='COLE_AQUI_A_URL_DO_PROJETO',SB_KEY='COLE_AQUI_A_CHAVE_ANON';
+const SB_URL='https://xobbhccaegeujxrvfvxr.supabase.co/rest/v1/',SB_KEY='sb_publishable_Mw6bDwfUFkwfHkLXPIPCOA_fQxvqfjY';
 const SET=['Operação','Manutenção','Suprimentos','Líder','Administração'];
 const PG={orc:['orcamentos','Orçamentos'],novo:['novo','Novo Orçamento'],sup:['suprimentos','Suprimentos'],mat:['materiais','Materiais & Horas'],usu:['usuarios','Usuários'],fro:['frota','Frota']};
 let U=null;try{U=JSON.parse(localStorage.getItem('u'))}catch(e){}
